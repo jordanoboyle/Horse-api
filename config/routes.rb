@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post "/horses" => "horses#create"
   get "/horses" => "horses#index"
+  get "/horses/:id" => "horses#show"
 
   # Defines the root path route ("/")
   # root "posts#index"
