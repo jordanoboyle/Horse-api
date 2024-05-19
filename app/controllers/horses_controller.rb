@@ -21,4 +21,17 @@ class HorsesController < ApplicationController
     render template: "horses/show"
   end
 
+  def update
+    @horse = Horse.find_by(id: 5)
+    @horse.name = "Lamb Chop"
+    @horse.color = "red brown"
+    @horse.weight = 689
+    @horse.price = 68900
+
+    @horse.save
+
+    render template: "horses/show"
+
+  end 
+
 end
