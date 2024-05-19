@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/horses" => "horses#index"
   get "/horses/:id" => "horses#show"
   patch "/horses/:id" => "horses#update"
+  delete "/horses/:id" => "horses#destroy"
 
   # Defines the root path route ("/")
   # root "posts#index"

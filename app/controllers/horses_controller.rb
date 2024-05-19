@@ -22,16 +22,21 @@ class HorsesController < ApplicationController
   end
 
   def update
-    @horse = Horse.find_by(id: 5)
-    @horse.name = "Lamb Chop"
-    @horse.color = "red brown"
-    @horse.weight = 689
-    @horse.price = 68900
-
+    @horse = Horse.find_by(id: params[:id] )
+    @horse.name = params[:name] || @horse.name
+    @horse.color = params[:color] || @horse.color
+    @horse.weight = params[:weight] || @horse.weight
+    @horse.price = params[:price] || @horse.price
     @horse.save
 
     render template: "horses/show"
-
   end 
+
+  def destroy
+    @horse = Horse.find_by(id: params[:id])
+    @horse.destroy
+
+    render template: "horses/show"
+  end
 
 end
