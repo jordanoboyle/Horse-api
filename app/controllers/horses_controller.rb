@@ -17,8 +17,7 @@ class HorsesController < ApplicationController
   end
 
   def show
-    @horse = Horse.find_by(id: 2)
-
+    @horse = Horse.find_by(id: params[:id])
     render template: "horses/show"
   end
 
